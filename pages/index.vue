@@ -63,13 +63,13 @@ export default {
             key: uuid,
             text:this.selection
         }
-        axios.post('http://localhost:3000/', payload)
+        axios.post('/', payload)
         
-        var clipboard = await navigator.clipboard.writeText(`http://localhost:3000/?id=${uuid}`)
+        var clipboard = await navigator.clipboard.writeText(`/?id=${uuid}`)
         this.alertShow = true
       },
       async navScroll(uuid){
-        const result = await axios.get(`http://localhost:3000/link/${uuid}`)
+        const result = await axios.get(`/link/${uuid}`)
         const text = result.data
         this.findAndReplace(text, uuid)
         document.getElementById(uuid).scrollIntoView({behavior: "smooth", block: "center", inline: "nearest"}); 
