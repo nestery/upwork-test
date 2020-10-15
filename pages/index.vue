@@ -65,7 +65,7 @@ export default {
         }
         axios.post('/', payload)
         
-        var clipboard = await navigator.clipboard.writeText(`/?id=${uuid}`)
+        var clipboard = await navigator.clipboard.writeText(`${location.host}/?id=${uuid}`)
         this.alertShow = true
       },
       async navScroll(uuid){
